@@ -12,7 +12,7 @@ const projects = [
     },    
     {
         title: "Noxel Engine",
-        description: "A game engine featuring C++ 23, DirectX 11, Vulkan, SDL3, EnTT and JoltPhysics.",
+        description: "A game engine featuring C++ 23, DirectX 11, SDL3 and JoltPhysics.",
         type: MAIN_ACCOUNT,
         tags: ["C++", "CMake", "SDL", "Protobuf", "EnTT", "DirectX 11"],
         link: "https://github.com/l-nikita/noxel-engine",
@@ -20,7 +20,7 @@ const projects = [
     },    
     {
         title: "Noxel Engine (C#)",
-        description: "An experimental game engine prototype in C# using .NET 10.",
+        description: "An game engine prototype in C# using .NET 10.",
         type: MAIN_ACCOUNT,
         tags: ["C#", ".NET", "OpenGL"],
         link: "https://github.com/l-nikita/csharp-noxel-engine",
@@ -35,7 +35,7 @@ const projects = [
         image: "https://github.com/user-attachments/assets/3be5c8f7-c78e-44f0-a3b6-d49df763ba11"
     },
     {
-        title: "Windows Forms - Car Service",
+        title: "Car Service",
         description: "A desktop application built using Windows Forms. The project implements graphical interface elements, event handling and using of Entity Framework Core with SQLite as database.",
         type: STUDY_ACCOUNT,
         tags: ["C#", ".NET", "Windows Forms"],
@@ -57,15 +57,23 @@ const projects = [
         link: "https://github.com/nikita-lit/php-web"
     }, 
     {
+        title: "C# Basics",
+        description: "A set of educational tasks and algorithms in C#. Includes the implementation of basic data structures, working with loops, conditions and functions.",
+        type: STUDY_ACCOUNT,
+        tags: ["C#", "Algorithms"],
+        link: "https://github.com/nikita-lit/csharp-basics"
+    },       
+    {
         title: "Python Basics",
-        description: "A collection of basic algorithms and exercises in Python. Covers the language's core concepts: variables, conditions, loops, functions and simple data structures. Also work with SQLite database.",
+        description: "A collection of basic algorithms and exercises in Python. Includes the language's core concepts: variables, conditions, loops, functions and simple data structures. Also work with SQLite database.",
         type: STUDY_ACCOUNT,
         tags: ["Python", "Algorithms"],
         link: "https://github.com/nikita-lit/python-basics"
     },    
 ];
 
-const projectsGrid = document.getElementById('projects-grid');
+const personalGrid = document.getElementById('personal-projects-grid');
+const studyGrid = document.getElementById('study-projects-grid');
 
 projects.forEach(project => {
     const card = document.createElement('div');
@@ -114,5 +122,8 @@ projects.forEach(project => {
         </div>
     `;
 
-    projectsGrid.appendChild(card);
+    if (project.type == STUDY_ACCOUNT)
+        studyGrid.appendChild(card);
+    else
+        personalGrid.appendChild(card);
 });
