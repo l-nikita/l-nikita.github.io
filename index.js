@@ -57,13 +57,6 @@ const projects = [
         link: "https://github.com/nikita-lit/php-web"
     }, 
     {
-        title: "C# Basics",
-        description: "A set of educational tasks and algorithms in C#. Includes the implementation of basic data structures, working with loops, conditions and functions.",
-        type: STUDY_ACCOUNT,
-        tags: ["C#", "Algorithms"],
-        link: "https://github.com/nikita-lit/csharp-basics"
-    },
-    {
         title: "Python Basics",
         description: "A collection of basic algorithms and exercises in Python. Covers the language's core concepts: variables, conditions, loops, functions and simple data structures. Also work with SQLite database.",
         type: STUDY_ACCOUNT,
