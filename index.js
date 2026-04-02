@@ -8,52 +8,53 @@ const projects = [
         type: MAIN_ACCOUNT,
         tags: ["C++", "CMake", "SDL", "Protobuf"],
         link: "https://github.com/l-nikita/uno",
-        image: "https://github.com/l-nikita/uno/blob/main/docs/images/main_menu.png?raw=true",
+        image: "https://github.com/l-nikita/uno/raw/main/docs/images/main_menu.png",
     },    
     {
         title: "Noxel Engine",
-        description: "A game engine featuring C++ 23, DirectX 11, SDL3 and JoltPhysics.",
+        description: "A game engine prototype featuring C++ 23, DirectX 11, SDL3 and JoltPhysics.",
         type: MAIN_ACCOUNT,
-        tags: ["C++", "CMake", "SDL", "Protobuf", "EnTT", "DirectX 11"],
+        tags: ["C++", "CMake", "SDL", "DirectX 11"],
         link: "https://github.com/l-nikita/noxel-engine",
         image: "https://github.com/l-nikita/noxel-engine/raw/main/docs/images/overview.png",
     },    
     {
         title: "Noxel Engine (C#)",
-        description: "An game engine prototype in C# using .NET 10.",
+        description: "A game engine prototype in C# using .NET 10.",
         type: MAIN_ACCOUNT,
         tags: ["C#", ".NET", "OpenGL"],
         link: "https://github.com/l-nikita/csharp-noxel-engine",
-        image: "https://github.com/l-nikita/csharp-noxel-engine/blob/main/docs/images/overview.png?raw=true",
+        image: "https://github.com/l-nikita/csharp-noxel-engine/raw/main/docs/images/overview.png",
     },
     {
         title: "Language School Info System",
         description: "A web application for managing a language school, developed using ASP.NET and Entity Framework Core.",
         type: STUDY_ACCOUNT,
-        tags: ["C#", "ASP.NET", "Bootstrap", "Web"],
+        tags: ["C#", "ASP.NET", "Bootstrap"],
         link: "https://github.com/nikita-lit/csharp-asp",
-        image: "https://github.com/user-attachments/assets/3be5c8f7-c78e-44f0-a3b6-d49df763ba11"
+        image: "https://github.com/nikita-lit/csharp-asp/raw/main/docs/images/overview.png"
     },
     {
         title: "Car Service",
-        description: "A desktop application built using Windows Forms. The project implements graphical interface elements, event handling and using of Entity Framework Core with SQLite as database.",
+        description: "A desktop application built using Windows Forms for managing vehicle, owner, and service records using SQLite and Entity Framework Core.",
         type: STUDY_ACCOUNT,
         tags: ["C#", ".NET", "Windows Forms"],
         link: "https://github.com/nikita-lit/csharp-winforms",
-        image: "https://github.com/user-attachments/assets/1e53f9fd-5489-4651-a9ad-84d207316f74"
+        image: "https://github.com/nikita-lit/csharp-winforms/raw/main/docs/images/overview.png"
     },  
     {
-        title: "MAUI Tutorial project",
-        description: "A tutorial project built using .NET MAUI for cross-platform application development. Includes basic interface elements, navigation between pages and working with data.",
+        title: "Tic Tac Toe",
+        description: "A Tic-Tac-Toe game developed with .NET MAUI, offering a modern UI. It includes customizable settings, statistics tracking, and support for playing against a bot.",
         type: STUDY_ACCOUNT,
         tags: ["C#", ".NET MAUI"],
-        link: "https://github.com/nikita-lit/csharp-maui"
+        link: "https://github.com/nikita-lit/csharp-maui",
+        image: "https://github.com/nikita-lit/csharp-maui/raw/main/docs/images/overview.png"
     },    
     {
         title: "PHP Website",
         description: "A website developed in PHP that demonstrates the basics of server-side development: routing, form processing and database interaction.",
         type: STUDY_ACCOUNT,
-        tags: ["PHP", "Web"],
+        tags: ["PHP", "SQL"],
         link: "https://github.com/nikita-lit/php-web"
     }, 
     {
@@ -89,7 +90,7 @@ projects.forEach(project => {
         borderClass = "hover:border-green-500";
     }
 
-    card.className = `bg-gray-800 rounded-xl border border-gray-700 ${borderClass} transition cursor-pointer shadow-lg hover:shadow-2xl flex flex-col overflow-hidden`;
+    card.className = `bg-gray-800  rounded-xl border border-gray-700 ${borderClass} transition cursor-pointer shadow-lg hover:shadow-2xl flex flex-col overflow-hidden`;
     
     card.onclick = () => {
         window.location.href = project.link;
@@ -117,7 +118,7 @@ projects.forEach(project => {
             <h3 class="text-2xl font-bold mt-2 mb-4">${project.title}</h3>
             <p class="text-gray-400 mb-6 flex-grow">${project.description}</p>
             <div class="flex flex-wrap gap-2 mt-auto">
-                ${project.tags.map(tag => `<span class="bg-gray-700/60 px-3 py-1 rounded text-sm">${tag}</span>`).join('')}
+                ${project.tags.map(tag => `<span class="bg-gray-700/60 border border-gray-700 px-3 py-1 rounded text-sm">${tag}</span>`).join('')}
             </div>
         </div>
     `;
