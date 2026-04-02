@@ -12,7 +12,7 @@ const projects = [
     },    
     {
         title: "Noxel Engine",
-        description: "A game engine prototype featuring C++ 23, DirectX 11, SDL3 and JoltPhysics.",
+        description: "A custom game engine prototype in C++ featuring DirectX 11, SDL3 and JoltPhysics. Implemented rendering pipeline, input system and basic physics.",
         type: MAIN_ACCOUNT,
         tags: ["C++", "CMake", "SDL", "DirectX 11"],
         link: "https://github.com/l-nikita/noxel-engine",
