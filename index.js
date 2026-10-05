@@ -27,6 +27,22 @@ const projects = [
         image: "https://github.com/l-nikita/csharp-noxel-engine/raw/main/docs/images/overview.png",
     },
     {
+        title: "KiirLink Server",
+        description: "Backend for a URL shortener built with ASP.NET Core minimal APIs. Includes Identity authentication, private and expiring links, favourites, categories and click analytics by device, source and country.",
+        type: STUDY_ACCOUNT,
+        tags: ["C#", "ASP.NET Core", "EF Core", "SQLite", "Docker"],
+        link: "https://github.com/nikita-lit/kiirlink-server",
+        icon: "fas fa-server"
+    },
+    {
+        title: "KiirLink Client",
+        description: "Cross-platform .NET MAUI app for the KiirLink URL shortener. Create short links and QR codes, organize them with categories and favourites, and view click analytics.",
+        type: STUDY_ACCOUNT,
+        tags: ["C#", ".NET MAUI", "MVVM"],
+        link: "https://github.com/nikita-lit/kiirlink-client",
+        image: "https://github.com/nikita-lit/kiirlink-client/raw/main/docs/images/overview.png"
+    },
+    {
         title: "Language School Info System",
         description: "A web application for managing a language school, developed using ASP.NET and Entity Framework Core.",
         type: STUDY_ACCOUNT,
@@ -55,7 +71,8 @@ const projects = [
         description: "A website developed in PHP that demonstrates the basics of server-side development: routing, form processing and database interaction.",
         type: STUDY_ACCOUNT,
         tags: ["PHP", "SQL"],
-        link: "https://github.com/nikita-lit/php-web"
+        link: "https://github.com/nikita-lit/php-web",
+        icon: "fab fa-php"
     }, 
     {
         title: "C# Basics",
@@ -69,7 +86,8 @@ const projects = [
         description: "A collection of basic algorithms and exercises in Python. Includes the language's core concepts: variables, conditions, loops, functions and simple data structures. Also work with SQLite database.",
         type: STUDY_ACCOUNT,
         tags: ["Python", "Algorithms"],
-        link: "https://github.com/nikita-lit/python-basics"
+        link: "https://github.com/nikita-lit/python-basics",
+        icon: "fab fa-python"
     },    
 ];
 
@@ -90,30 +108,31 @@ projects.forEach(project => {
         borderClass = "hover:border-green-500";
     }
 
-    card.className = `bg-gray-800  rounded-xl border border-gray-700 ${borderClass} transition cursor-pointer shadow-lg hover:shadow-2xl flex flex-col overflow-hidden`;
+    card.className = `group bg-gray-800 border border-gray-700 ${borderClass} transition cursor-pointer shadow-lg hover:shadow-2xl flex flex-col overflow-hidden`;
     
     card.onclick = () => {
         window.location.href = project.link;
     };
 
     let imageHTML = "";
-    if (project.image) 
+    if (project.image)
     {
         imageHTML = `
-            <div class="w-100 overflow-hidden border-b border-gray-700/50">
-                <img 
-                    src="${project.image}" 
-                    alt="${project.title} Screenshot" 
-                    class="w-full object-contain transition-transform duration-300 hover:scale-105"
-                    onerror="this.parentElement.style.display='none';"
-                />
-            </div>
+            <img
+                src="${project.image}"
+                alt="${project.title} Screenshot"
+                class="absolute inset-0 w-full h-full object-contain p-4 bg-gray-900 drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+                onerror="this.remove();"
+            />
         `;
     }
 
     card.innerHTML = `
-        ${imageHTML}
-        <div class="p-8 flex-grow flex flex-col">
+        <div class="relative w-full aspect-video overflow-hidden bg-gray-900 border-b border-gray-700/50 flex items-center justify-center">
+            <i class="${project.icon ?? "fas fa-code"} text-6xl ${spanClass} opacity-30"></i>
+            ${imageHTML}
+        </div>
+        <div class="p-6 flex-grow flex flex-col">
             <span class="${spanClass} text-sm font-mono">[ ${typeName} ]</span>
             <h3 class="text-2xl font-bold mt-2 mb-4">${project.title}</h3>
             <p class="text-gray-400 mb-6 flex-grow">${project.description}</p>
